@@ -166,4 +166,5 @@ public class SwipeLinearLayout extends LinearLayout {
     public void setOnSwipeListener(OnSwipeListener listener) {
         mOnSwipeListener = listener;
     }
+
 }

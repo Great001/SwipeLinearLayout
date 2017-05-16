@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements SwipeLinearLayout
             }
         });
 
+
     }
 
     @Override
@@ -40,8 +41,15 @@ public class MainActivity extends AppCompatActivity implements SwipeLinearLayout
         super.onWindowFocusChanged(hasFocus);
         if(hasFocus){
             int childCount = mLvTest.getChildCount();
-            for(int i = 0;i< childCount;i++){
+            for( int i = 0;i< childCount;i++){
+                final int  position = i;
                 ((SwipeLinearLayout)mLvTest.getChildAt(i)).setOnSwipeListener(this);
+                ((SwipeLinearLayout)mLvTest.getChildAt(i)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this,"点击" + position,Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         }
     }
